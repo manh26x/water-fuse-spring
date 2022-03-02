@@ -8,13 +8,19 @@
         <route id="_route1">
             <from id="_from1" uri="netty-http:http://localhost:8082/path"/>
             <to id="_toSelectFtpAccount" uri="jpa:org.mycompany.entity.FtpAccountEntity?query=select fa from org.mycompany.entity.FtpAccountEntity fa where fa.status = true"/>
-            <split id="_split1">
+            <split id="_split1" parallelProcessing="true">
                 <simple>${body}</simple>
                 <log id="_log3" message="protocol ${body.protocol}"/>
-                <pollEnrich id="_pollEnrich1" strategyRef="clearOldMessage">
-                    <simple>${body.protocol}://${body.account}@${body.ftpAddress}:${body.port}/?password=${body.password}&amp;passiveMode=true&amp;download=true&amp;streamDownload=true&amp;stepwise=false&amp;shuffle=true</simple>
-                </pollEnrich>
-                <log id="_log1" message="${body}"/>
+                <setHeader headerName="finished" id="_setHeader1">
+                    <constant>false</constant>
+                </setHeader>
+                <loop doWhile="true" id="_loop1">
+                    <simple>${header.finished} == false</simple>
+                    <pollEnrich id="_pollEnrich1" strategyRef="clearOldMessage">
+                        <simple>${body.protocol}://${body.account}@${body.ftpAddress}:${body.port}/?password=${body.password}&amp;passiveMode=true&amp;download=true&amp;streamDownload=true&amp;stepwise=false&amp;doneFileName=${file:name}.done</simple>
+                    </pollEnrich>
+                    <log id="_log1" message="${body}"/>
+                </loop>
             </split>
             <marshal id="_marshal1">
                 <json library="Jackson"/>
