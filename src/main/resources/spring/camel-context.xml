@@ -1,37 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       https://camel.apache.org/schema/spring/camel-spring-2.23.3.xsd">
-    <bean class="org.mycompany.FileProcess" id="fileProcess" scope="singleton"/>
+    <bean class="org.mycompany.process.FileProcess" id="fileProcess" scope="singleton"/>
     <bean class="org.mycompany.strategy.ClearOldMessageStrategy" id="clearOldMessage"/>
     <!--<import resource="classpath:spring/jpa-camel-context.xml"/> -->
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
         <route id="_route1">
-            <from id="_from1" uri="netty-http:http://localhost:8082/path"/>
-            <to id="_toSelectFtpAccount" uri="jpa:org.mycompany.entity.FtpAccountEntity?query=select fa from org.mycompany.entity.FtpAccountEntity fa where fa.status = true"/>
+            <from id="_toSelectFtpAccount" uri="jpa:org.mycompany.entity.FtpAccountEntity?delay=60000&amp;query=select fa from org.mycompany.entity.FtpAccountEntity fa where fa.status = true&amp;consumeDelete=false"/>
             <split id="_split1" parallelProcessing="true">
                 <simple>${body}</simple>
                 <log id="_log3" message="protocol ${body.protocol}"/>
-                <setHeader headerName="finished" id="_setHeader1">
-                    <constant>false</constant>
-                </setHeader>
-                <loop doWhile="true" id="_loop1">
-                    <simple>${header.finished} == false</simple>
-                    <pollEnrich id="_pollEnrich1" strategyRef="clearOldMessage">
-                        <simple>${body.protocol}://${body.account}@${body.ftpAddress}:${body.port}/?password=${body.password}&amp;passiveMode=true&amp;download=true&amp;streamDownload=true&amp;stepwise=false&amp;doneFileName=${file:name}.done</simple>
-                    </pollEnrich>
-                    <log id="_log1" message="${body}"/>
-                </loop>
+                <pollEnrich id="_pollEnrich1" strategyRef="clearOldMessage">
+                    <simple>${body.protocol}://${body.account}@${body.ftpAddress}:${body.port}${body.workingDirectory}?password=${body.password}&amp;passiveMode=true&amp;delete=true&amp;disconnect=true</simple>
+                </pollEnrich>
+                <toD id="_to1" uri="file:~/waterBackup/"/>
             </split>
             <marshal id="_marshal1">
                 <json library="Jackson"/>
             </marshal>
         </route>
         <route id="_route2">
-            <from id="_to2" uri="seda:get-data-file"/>
-            <filter id="_filter1">
-                <simple>${header.isFile} == true</simple>
-                <to id="_to3" uri="file:D:\ftp_test"/>
-            </filter>
+            <from id="_to2" uri="file:~/waterBackup/?preMove=inprogress&amp;move=.done"/>
+            <process id="_process_file" ref="fileProcess"/>
+            <wireTap id="_wireTap1" uri="direct:save-data"/>
+            <log id="_log1" message="file ${header.CamelFileName}"/>
+        </route>
+        <route id="_route3">
+            <from id="_from_save_data" uri="direct:save-data"/>
+            <setBody id="_setBody1">
+                <simple>${header.dataSave}</simple>
+            </setBody>
+            <to id="_to3" uri="jpa:com.mycompany.entity.StorageDataParam?usePersist=true"/>
         </route>
     </camelContext>
 </beans>

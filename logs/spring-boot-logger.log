@@ -1,0 +1,443 @@
+2022-03-04 11:15:15,847 INFO org.springframework.boot.StartupInfoLogger [main] Starting Application on DESKTOP-2GDIOJC with PID 3964 (C:\Users\USER\git\repository\abc-test\target\classes started by USER in C:\Users\USER\git\repository\abc-test)
+2022-03-04 11:15:15,849 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-03-04 11:15:18,772 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-04 11:15:18,789 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 10ms. Found 0 JPA repository interfaces.
+2022-03-04 11:15:19,025 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$d0314527] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-04 11:15:19,267 WARN io.undertow.websockets.jsr.Bootstrap [main] UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-03-04 11:15:19,291 INFO io.undertow.servlet.spec.ServletContextImpl [main] Initializing Spring embedded WebApplicationContext
+2022-03-04 11:15:19,291 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3408 ms
+2022-03-04 11:15:19,581 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2022-03-04 11:15:19,688 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.23.Final-redhat-00001}
+2022-03-04 11:15:19,691 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2022-03-04 11:15:19,894 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.0.5.Final-redhat-00002}
+2022-03-04 11:15:19,991 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-04 11:15:20,189 WARN com.microsoft.sqlserver.jdbc.TDSChannel [main] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:15:20,306 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-04 11:15:20,320 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-03-04 11:15:20,460 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:15:20,509 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:15:20,552 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:15:20,591 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:15:20,639 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:15:20,685 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:15:20,733 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:15:20,773 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:15:20,820 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:15:22,448 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-04 11:15:22,601 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 15)
+2022-03-04 11:15:22,681 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-04 11:15:22,803 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-04 11:15:23,144 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-03-04 11:15:23,222 INFO io.undertow.Undertow [main] starting server: Undertow - 2.2.12.Final-redhat-00001
+2022-03-04 11:15:23,227 INFO org.xnio.Xnio [main] XNIO version 3.8.4.Final-redhat-00001
+2022-03-04 11:15:23,235 INFO org.xnio.nio.NioXnio [main] XNIO NIO Implementation Version 3.8.4.Final-redhat-00001
+2022-03-04 11:15:23,320 INFO org.jboss.threads.Version [main] JBoss Threads version 3.1.0.Final
+2022-03-04 11:15:23,429 INFO org.springframework.boot.web.embedded.undertow.UndertowWebServer [main] Undertow started on port(s) 8080 (http)
+2022-03-04 11:15:23,441 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
+2022-03-04 11:15:23,441 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+2022-03-04 11:15:23,454 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) is starting
+2022-03-04 11:15:23,455 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
+2022-03-04 11:15:23,527 INFO org.apache.camel.component.jpa.JpaComponent [main] Using EntityManagerFactory found in registry with id [entityManagerFactory] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean@44aa5585
+2022-03-04 11:15:23,527 INFO org.apache.camel.component.jpa.JpaComponent [main] Using TransactionManager found in registry with id [transactionManager] org.springframework.orm.jpa.JpaTransactionManager@701da311
+2022-03-04 11:15:23,630 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2022-03-04 11:15:23,639 INFO org.apache.camel.component.jackson.JacksonDataFormat [main] Found single ObjectMapper in Registry to use: com.fasterxml.jackson.databind.ObjectMapper@532e00bd
+2022-03-04 11:15:23,765 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route1 started and consuming from: jpa://org.mycompany.entity.FtpAccountEntity?delay=60000&query=select+fa+from+org.mycompany.entity.FtpAccountEntity+fa+where+fa.status+%3D+true
+2022-03-04 11:15:23,767 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route2 started and consuming from: file://%7E/waterBackup/?move=.done&preMove=inprogress
+2022-03-04 11:15:23,768 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route3 started and consuming from: direct://save-data
+2022-03-04 11:15:23,769 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 3 routes, of which 3 are started
+2022-03-04 11:15:23,771 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) started in 0.316 seconds
+2022-03-04 11:15:23,782 INFO org.springframework.boot.StartupInfoLogger [main] Started Application in 9.152 seconds (JVM running for 12.573)
+2022-03-04 11:15:24,842 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [Camel (MyCamel) thread #1 - jpa://org.mycompany.entity.FtpAccountEntity] HHH000397: Using ASTQueryTranslatorFactory
+2022-03-04 11:15:24,996 INFO org.apache.camel.util.CamelLogger [Camel (MyCamel) thread #3 - Split] protocol ftp
+2022-03-04 11:15:25,261 WARN org.apache.camel.util.CamelLogger [Camel (MyCamel) thread #3 - Split] Error processing file RemoteFile[SL_thuydienPachien_preData_20220301050000.txt] due to Cannot retrieve file: RemoteFile[SL_thuydienPachien_preData_20220301050000.txt] from: ftp://dev@103.166.182.190:21/?delete=true&disconnect=true&passiveMode=true&password=xxxxxx. Caused by: [org.apache.camel.component.file.GenericFileOperationFailedException - Cannot retrieve file: RemoteFile[SL_thuydienPachien_preData_20220301050000.txt] from: ftp://dev@103.166.182.190:21/?delete=true&disconnect=true&passiveMode=true&password=xxxxxx]
+org.apache.camel.component.file.GenericFileOperationFailedException: Cannot retrieve file: RemoteFile[SL_thuydienPachien_preData_20220301050000.txt] from: ftp://dev@103.166.182.190:21/?delete=true&disconnect=true&passiveMode=true&password=xxxxxx
+	at org.apache.camel.component.file.GenericFileConsumer.processExchange(GenericFileConsumer.java:428)
+	at org.apache.camel.component.file.remote.RemoteFileConsumer.processExchange(RemoteFileConsumer.java:133)
+	at org.apache.camel.component.file.GenericFileConsumer.processBatch(GenericFileConsumer.java:221)
+	at org.apache.camel.component.file.GenericFileConsumer.poll(GenericFileConsumer.java:185)
+	at org.apache.camel.component.file.GenericFilePollingConsumer.doReceive(GenericFilePollingConsumer.java:142)
+	at org.apache.camel.component.file.GenericFilePollingConsumer.receive(GenericFilePollingConsumer.java:95)
+	at org.apache.camel.processor.PollEnricher.process(PollEnricher.java:235)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:548)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:201)
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:138)
+	at org.apache.camel.processor.Pipeline.process(Pipeline.java:101)
+	at org.apache.camel.processor.RedeliveryErrorHandler.process(RedeliveryErrorHandler.java:548)
+	at org.apache.camel.processor.CamelInternalProcessor.process(CamelInternalProcessor.java:201)
+	at org.apache.camel.util.AsyncProcessorHelper.process(AsyncProcessorHelper.java:109)
+	at org.apache.camel.processor.MulticastProcessor.doProcessParallel(MulticastProcessor.java:859)
+	at org.apache.camel.processor.MulticastProcessor.access$200(MulticastProcessor.java:86)
+	at org.apache.camel.processor.MulticastProcessor$1.call(MulticastProcessor.java:330)
+	at org.apache.camel.processor.MulticastProcessor$1.call(MulticastProcessor.java:316)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2022-03-04 11:40:39,821 INFO org.springframework.boot.StartupInfoLogger [main] Starting Application on DESKTOP-2GDIOJC with PID 3276 (C:\Users\USER\git\repository\abc-test\target\classes started by USER in C:\Users\USER\git\repository\abc-test)
+2022-03-04 11:40:39,823 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-03-04 11:40:42,150 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-04 11:40:42,167 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 10ms. Found 0 JPA repository interfaces.
+2022-03-04 11:40:42,419 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$d0314527] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-04 11:40:42,622 WARN io.undertow.websockets.jsr.Bootstrap [main] UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-03-04 11:40:42,639 INFO io.undertow.servlet.spec.ServletContextImpl [main] Initializing Spring embedded WebApplicationContext
+2022-03-04 11:40:42,639 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2783 ms
+2022-03-04 11:40:42,878 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2022-03-04 11:40:42,930 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.23.Final-redhat-00001}
+2022-03-04 11:40:42,931 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2022-03-04 11:40:43,057 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.0.5.Final-redhat-00002}
+2022-03-04 11:40:43,135 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-04 11:40:43,237 WARN com.microsoft.sqlserver.jdbc.TDSChannel [main] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:40:43,306 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-04 11:40:43,319 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-03-04 11:40:43,445 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:40:43,490 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:40:43,553 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:40:43,591 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:40:43,627 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:40:43,698 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:40:43,743 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:40:43,798 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-04 11:40:43,801 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:40:43,858 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:40:43,927 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 15)
+2022-03-04 11:40:44,001 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-04 11:40:44,122 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-04 11:40:44,446 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-03-04 11:40:44,526 INFO io.undertow.Undertow [main] starting server: Undertow - 2.2.12.Final-redhat-00001
+2022-03-04 11:40:44,532 INFO org.xnio.Xnio [main] XNIO version 3.8.4.Final-redhat-00001
+2022-03-04 11:40:44,537 INFO org.xnio.nio.NioXnio [main] XNIO NIO Implementation Version 3.8.4.Final-redhat-00001
+2022-03-04 11:40:44,613 INFO org.jboss.threads.Version [main] JBoss Threads version 3.1.0.Final
+2022-03-04 11:40:44,645 INFO org.springframework.boot.web.embedded.undertow.UndertowWebServer [main] Undertow started on port(s) 8080 (http)
+2022-03-04 11:40:44,655 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
+2022-03-04 11:40:44,656 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+2022-03-04 11:40:44,666 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) is starting
+2022-03-04 11:40:44,667 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
+2022-03-04 11:40:44,733 INFO org.apache.camel.component.jpa.JpaComponent [main] Using EntityManagerFactory found in registry with id [entityManagerFactory] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean@44aa5585
+2022-03-04 11:40:44,734 INFO org.apache.camel.component.jpa.JpaComponent [main] Using TransactionManager found in registry with id [transactionManager] org.springframework.orm.jpa.JpaTransactionManager@790ea58f
+2022-03-04 11:40:44,819 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2022-03-04 11:40:44,827 INFO org.apache.camel.component.jackson.JacksonDataFormat [main] Found single ObjectMapper in Registry to use: com.fasterxml.jackson.databind.ObjectMapper@7878459f
+2022-03-04 11:40:44,923 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route1 started and consuming from: jpa://org.mycompany.entity.FtpAccountEntity?delay=1000&query=select+fa+from+org.mycompany.entity.FtpAccountEntity+fa+where+fa.status+%3D+true
+2022-03-04 11:40:44,926 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route2 started and consuming from: file://%7E/waterBackup/?move=.done&preMove=inprogress
+2022-03-04 11:40:44,927 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route3 started and consuming from: direct://save-data
+2022-03-04 11:40:44,928 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 3 routes, of which 3 are started
+2022-03-04 11:40:44,930 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) started in 0.262 seconds
+2022-03-04 11:40:44,942 INFO org.springframework.boot.StartupInfoLogger [main] Started Application in 5.355 seconds (JVM running for 5.817)
+2022-03-04 11:40:46,018 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [Camel (MyCamel) thread #1 - jpa://org.mycompany.entity.FtpAccountEntity] HHH000397: Using ASTQueryTranslatorFactory
+2022-03-04 11:41:47,433 INFO org.springframework.boot.StartupInfoLogger [main] Starting Application on DESKTOP-2GDIOJC with PID 19912 (C:\Users\USER\git\repository\abc-test\target\classes started by USER in C:\Users\USER\git\repository\abc-test)
+2022-03-04 11:41:47,441 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-03-04 11:41:51,704 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-04 11:41:51,734 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 15ms. Found 0 JPA repository interfaces.
+2022-03-04 11:41:52,230 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$e70ed9be] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-04 11:41:52,650 WARN io.undertow.websockets.jsr.Bootstrap [main] UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-03-04 11:41:52,693 INFO io.undertow.servlet.spec.ServletContextImpl [main] Initializing Spring embedded WebApplicationContext
+2022-03-04 11:41:52,694 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 5186 ms
+2022-03-04 11:41:53,178 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2022-03-04 11:41:53,344 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.23.Final-redhat-00001}
+2022-03-04 11:41:53,348 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2022-03-04 11:41:53,683 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.0.5.Final-redhat-00002}
+2022-03-04 11:41:53,859 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-04 11:41:54,041 WARN com.microsoft.sqlserver.jdbc.TDSChannel [main] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:41:54,163 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-04 11:41:54,205 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-03-04 11:41:54,345 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:41:54,405 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:41:54,458 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:41:54,788 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:41:54,834 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:41:54,898 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:41:54,946 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:41:54,988 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:41:55,067 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:41:55,394 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-04 11:41:55,703 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 15)
+2022-03-04 11:41:55,849 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-04 11:41:56,109 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-04 11:41:56,807 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-03-04 11:41:56,921 INFO io.undertow.Undertow [main] starting server: Undertow - 2.2.12.Final-redhat-00001
+2022-03-04 11:41:56,939 INFO org.xnio.Xnio [main] XNIO version 3.8.4.Final-redhat-00001
+2022-03-04 11:41:56,957 INFO org.xnio.nio.NioXnio [main] XNIO NIO Implementation Version 3.8.4.Final-redhat-00001
+2022-03-04 11:41:57,014 INFO org.jboss.threads.Version [main] JBoss Threads version 3.1.0.Final
+2022-03-04 11:41:57,085 INFO org.springframework.boot.web.embedded.undertow.UndertowWebServer [main] Undertow started on port(s) 8080 (http)
+2022-03-04 11:41:57,117 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
+2022-03-04 11:41:57,118 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+2022-03-04 11:41:57,142 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) is starting
+2022-03-04 11:41:57,144 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
+2022-03-04 11:41:57,340 INFO org.apache.camel.component.jpa.JpaComponent [main] Using EntityManagerFactory found in registry with id [entityManagerFactory] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean@168e3e6b
+2022-03-04 11:41:57,340 INFO org.apache.camel.component.jpa.JpaComponent [main] Using TransactionManager found in registry with id [transactionManager] org.springframework.orm.jpa.JpaTransactionManager@59207496
+2022-03-04 11:41:57,519 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2022-03-04 11:41:57,541 INFO org.apache.camel.component.jackson.JacksonDataFormat [main] Found single ObjectMapper in Registry to use: com.fasterxml.jackson.databind.ObjectMapper@19a4686c
+2022-03-04 11:41:57,725 INFO org.apache.camel.util.CamelLogger [RMI TCP Connection(2)-10.0.255.71] Enabling debugger
+2022-03-04 11:41:57,787 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route1 started and consuming from: jpa://org.mycompany.entity.FtpAccountEntity?delay=1&query=select+fa+from+org.mycompany.entity.FtpAccountEntity+fa+where+fa.status+%3D+true&timeUnit=MINUTES
+2022-03-04 11:41:57,790 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route2 started and consuming from: file://%7E/waterBackup/?move=.done&preMove=inprogress
+2022-03-04 11:41:57,792 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route3 started and consuming from: direct://save-data
+2022-03-04 11:41:57,792 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 3 routes, of which 3 are started
+2022-03-04 11:41:57,795 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) started in 0.651 seconds
+2022-03-04 11:41:57,813 INFO org.springframework.boot.StartupInfoLogger [main] Started Application in 10.882 seconds (JVM running for 18.29)
+2022-03-04 11:45:08,377 INFO org.springframework.boot.StartupInfoLogger [main] Starting Application on DESKTOP-2GDIOJC with PID 23548 (C:\Users\USER\git\repository\abc-test\target\classes started by USER in C:\Users\USER\git\repository\abc-test)
+2022-03-04 11:45:08,383 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-03-04 11:45:12,057 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-04 11:45:12,080 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 13ms. Found 0 JPA repository interfaces.
+2022-03-04 11:45:12,551 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$c21c28a3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-04 11:45:12,952 WARN io.undertow.websockets.jsr.Bootstrap [main] UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-03-04 11:45:12,981 INFO io.undertow.servlet.spec.ServletContextImpl [main] Initializing Spring embedded WebApplicationContext
+2022-03-04 11:45:12,981 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 4536 ms
+2022-03-04 11:45:13,489 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2022-03-04 11:45:13,641 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.23.Final-redhat-00001}
+2022-03-04 11:45:13,644 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2022-03-04 11:45:13,937 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.0.5.Final-redhat-00002}
+2022-03-04 11:45:14,116 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-04 11:45:14,290 WARN com.microsoft.sqlserver.jdbc.TDSChannel [main] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:45:14,423 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-04 11:45:14,463 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-03-04 11:45:14,573 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:45:14,621 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:45:14,703 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:45:14,769 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:45:14,820 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:45:14,874 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:45:14,923 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:45:14,973 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:45:15,031 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:45:15,505 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-04 11:45:15,809 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 15)
+2022-03-04 11:45:15,948 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-04 11:45:16,221 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-04 11:45:16,960 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-03-04 11:45:17,080 INFO io.undertow.Undertow [main] starting server: Undertow - 2.2.12.Final-redhat-00001
+2022-03-04 11:45:17,094 INFO org.xnio.Xnio [main] XNIO version 3.8.4.Final-redhat-00001
+2022-03-04 11:45:17,110 INFO org.xnio.nio.NioXnio [main] XNIO NIO Implementation Version 3.8.4.Final-redhat-00001
+2022-03-04 11:45:17,174 INFO org.jboss.threads.Version [main] JBoss Threads version 3.1.0.Final
+2022-03-04 11:45:17,252 INFO org.springframework.boot.web.embedded.undertow.UndertowWebServer [main] Undertow started on port(s) 8080 (http)
+2022-03-04 11:45:17,289 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
+2022-03-04 11:45:17,289 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+2022-03-04 11:45:17,320 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) is starting
+2022-03-04 11:45:17,322 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
+2022-03-04 11:45:17,537 INFO org.apache.camel.component.jpa.JpaComponent [main] Using EntityManagerFactory found in registry with id [entityManagerFactory] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean@5fa5dc
+2022-03-04 11:45:17,538 INFO org.apache.camel.component.jpa.JpaComponent [main] Using TransactionManager found in registry with id [transactionManager] org.springframework.orm.jpa.JpaTransactionManager@7a6d49ed
+2022-03-04 11:45:17,729 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2022-03-04 11:45:17,753 INFO org.apache.camel.component.jackson.JacksonDataFormat [main] Found single ObjectMapper in Registry to use: com.fasterxml.jackson.databind.ObjectMapper@20b949f9
+2022-03-04 11:45:18,011 INFO org.apache.camel.util.CamelLogger [RMI TCP Connection(2)-10.0.255.71] Enabling debugger
+2022-03-04 11:45:18,056 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route1 started and consuming from: jpa://org.mycompany.entity.FtpAccountEntity?delay=5&query=select+fa+from+org.mycompany.entity.FtpAccountEntity+fa+where+fa.status+%3D+true&timeUnit=SECONDS
+2022-03-04 11:45:18,062 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route2 started and consuming from: file://%7E/waterBackup/?move=.done&preMove=inprogress
+2022-03-04 11:45:18,064 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route3 started and consuming from: direct://save-data
+2022-03-04 11:45:18,065 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 3 routes, of which 3 are started
+2022-03-04 11:45:18,068 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) started in 0.748 seconds
+2022-03-04 11:45:18,084 INFO org.springframework.boot.StartupInfoLogger [main] Started Application in 10.161 seconds (JVM running for 17.447)
+2022-03-04 11:46:02,845 INFO org.springframework.boot.StartupInfoLogger [main] Starting Application on DESKTOP-2GDIOJC with PID 9024 (C:\Users\USER\git\repository\abc-test\target\classes started by USER in C:\Users\USER\git\repository\abc-test)
+2022-03-04 11:46:02,852 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-03-04 11:46:06,305 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-04 11:46:06,337 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 18ms. Found 0 JPA repository interfaces.
+2022-03-04 11:46:06,823 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$51f5f33f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-04 11:46:07,214 WARN io.undertow.websockets.jsr.Bootstrap [main] UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-03-04 11:46:07,250 INFO io.undertow.servlet.spec.ServletContextImpl [main] Initializing Spring embedded WebApplicationContext
+2022-03-04 11:46:07,251 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 4335 ms
+2022-03-04 11:46:07,771 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2022-03-04 11:46:07,924 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.23.Final-redhat-00001}
+2022-03-04 11:46:07,927 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2022-03-04 11:46:08,275 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.0.5.Final-redhat-00002}
+2022-03-04 11:46:08,496 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-04 11:46:08,653 WARN com.microsoft.sqlserver.jdbc.TDSChannel [main] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:08,784 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-04 11:46:08,826 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-03-04 11:46:08,939 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:09,014 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:09,100 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:09,173 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:09,249 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:09,332 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:09,379 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:09,449 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:09,496 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:10,114 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-04 11:46:10,447 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 15)
+2022-03-04 11:46:10,629 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-04 11:46:10,908 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-04 11:46:11,608 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-03-04 11:46:11,744 INFO io.undertow.Undertow [main] starting server: Undertow - 2.2.12.Final-redhat-00001
+2022-03-04 11:46:11,760 INFO org.xnio.Xnio [main] XNIO version 3.8.4.Final-redhat-00001
+2022-03-04 11:46:11,779 INFO org.xnio.nio.NioXnio [main] XNIO NIO Implementation Version 3.8.4.Final-redhat-00001
+2022-03-04 11:46:11,850 INFO org.jboss.threads.Version [main] JBoss Threads version 3.1.0.Final
+2022-03-04 11:46:11,913 INFO org.springframework.boot.web.embedded.undertow.UndertowWebServer [main] Undertow started on port(s) 8080 (http)
+2022-03-04 11:46:11,946 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
+2022-03-04 11:46:11,947 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+2022-03-04 11:46:11,972 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) is starting
+2022-03-04 11:46:11,975 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
+2022-03-04 11:46:12,200 INFO org.apache.camel.component.jpa.JpaComponent [main] Using EntityManagerFactory found in registry with id [entityManagerFactory] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean@490bf83f
+2022-03-04 11:46:12,201 INFO org.apache.camel.component.jpa.JpaComponent [main] Using TransactionManager found in registry with id [transactionManager] org.springframework.orm.jpa.JpaTransactionManager@a338e01
+2022-03-04 11:46:12,400 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2022-03-04 11:46:12,424 INFO org.apache.camel.component.jackson.JacksonDataFormat [main] Found single ObjectMapper in Registry to use: com.fasterxml.jackson.databind.ObjectMapper@722982d7
+2022-03-04 11:46:12,651 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route1 started and consuming from: jpa://org.mycompany.entity.FtpAccountEntity?delay=5000&query=select+fa+from+org.mycompany.entity.FtpAccountEntity+fa+where+fa.status+%3D+true
+2022-03-04 11:46:12,656 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route2 started and consuming from: file://%7E/waterBackup/?move=.done&preMove=inprogress
+2022-03-04 11:46:12,658 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route3 started and consuming from: direct://save-data
+2022-03-04 11:46:12,659 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 3 routes, of which 3 are started
+2022-03-04 11:46:12,662 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) started in 0.687 seconds
+2022-03-04 11:46:12,681 INFO org.springframework.boot.StartupInfoLogger [main] Started Application in 10.304 seconds (JVM running for 17.61)
+2022-03-04 11:46:12,892 INFO org.apache.camel.util.CamelLogger [RMI TCP Connection(2)-10.0.255.71] Enabling debugger
+2022-03-04 11:46:13,718 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [Camel (MyCamel) thread #1 - jpa://org.mycompany.entity.FtpAccountEntity] HHH000397: Using ASTQueryTranslatorFactory
+2022-03-04 11:46:43,968 INFO org.springframework.boot.StartupInfoLogger [main] Starting Application on DESKTOP-2GDIOJC with PID 12044 (C:\Users\USER\git\repository\abc-test\target\classes started by USER in C:\Users\USER\git\repository\abc-test)
+2022-03-04 11:46:43,970 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-03-04 11:46:46,920 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-04 11:46:46,938 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 10ms. Found 0 JPA repository interfaces.
+2022-03-04 11:46:47,155 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$a21263fb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-04 11:46:47,346 WARN io.undertow.websockets.jsr.Bootstrap [main] UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-03-04 11:46:47,363 INFO io.undertow.servlet.spec.ServletContextImpl [main] Initializing Spring embedded WebApplicationContext
+2022-03-04 11:46:47,363 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3361 ms
+2022-03-04 11:46:47,603 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2022-03-04 11:46:47,663 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.23.Final-redhat-00001}
+2022-03-04 11:46:47,665 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2022-03-04 11:46:47,765 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.0.5.Final-redhat-00002}
+2022-03-04 11:46:47,851 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-04 11:46:47,945 WARN com.microsoft.sqlserver.jdbc.TDSChannel [main] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:48,005 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-04 11:46:48,017 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-03-04 11:46:48,165 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:48,208 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:48,256 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:48,291 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:48,331 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:48,369 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:48,433 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:48,481 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:48,507 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-04 11:46:48,521 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:46:48,635 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 15)
+2022-03-04 11:46:48,712 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-04 11:46:48,831 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-04 11:46:49,159 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-03-04 11:46:49,226 INFO io.undertow.Undertow [main] starting server: Undertow - 2.2.12.Final-redhat-00001
+2022-03-04 11:46:49,233 INFO org.xnio.Xnio [main] XNIO version 3.8.4.Final-redhat-00001
+2022-03-04 11:46:49,238 INFO org.xnio.nio.NioXnio [main] XNIO NIO Implementation Version 3.8.4.Final-redhat-00001
+2022-03-04 11:46:49,295 INFO org.jboss.threads.Version [main] JBoss Threads version 3.1.0.Final
+2022-03-04 11:46:49,327 INFO org.springframework.boot.web.embedded.undertow.UndertowWebServer [main] Undertow started on port(s) 8080 (http)
+2022-03-04 11:46:49,338 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
+2022-03-04 11:46:49,339 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+2022-03-04 11:46:49,349 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) is starting
+2022-03-04 11:46:49,351 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
+2022-03-04 11:46:49,422 INFO org.apache.camel.component.jpa.JpaComponent [main] Using EntityManagerFactory found in registry with id [entityManagerFactory] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean@51a69e8f
+2022-03-04 11:46:49,423 INFO org.apache.camel.component.jpa.JpaComponent [main] Using TransactionManager found in registry with id [transactionManager] org.springframework.orm.jpa.JpaTransactionManager@434a2a10
+2022-03-04 11:46:49,507 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2022-03-04 11:46:49,516 INFO org.apache.camel.component.jackson.JacksonDataFormat [main] Found single ObjectMapper in Registry to use: com.fasterxml.jackson.databind.ObjectMapper@49e92724
+2022-03-04 11:46:49,617 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route1 started and consuming from: jpa://org.mycompany.entity.FtpAccountEntity?delay=60000&query=select+fa+from+org.mycompany.entity.FtpAccountEntity+fa+where+fa.status+%3D+true
+2022-03-04 11:46:49,620 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route2 started and consuming from: file://%7E/waterBackup/?move=.done&preMove=inprogress
+2022-03-04 11:46:49,621 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route3 started and consuming from: direct://save-data
+2022-03-04 11:46:49,621 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 3 routes, of which 3 are started
+2022-03-04 11:46:49,623 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) started in 0.272 seconds
+2022-03-04 11:46:49,634 INFO org.springframework.boot.StartupInfoLogger [main] Started Application in 5.899 seconds (JVM running for 6.341)
+2022-03-04 11:46:50,671 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [Camel (MyCamel) thread #1 - jpa://org.mycompany.entity.FtpAccountEntity] HHH000397: Using ASTQueryTranslatorFactory
+2022-03-04 11:55:50,462 INFO org.springframework.boot.StartupInfoLogger [main] Starting Application on DESKTOP-2GDIOJC with PID 17668 (C:\Users\USER\git\repository\abc-test\target\classes started by USER in C:\Users\USER\git\repository\abc-test)
+2022-03-04 11:55:50,465 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-03-04 11:55:52,935 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-04 11:55:52,956 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 11ms. Found 0 JPA repository interfaces.
+2022-03-04 11:55:53,181 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$32263409] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-04 11:55:53,373 WARN io.undertow.websockets.jsr.Bootstrap [main] UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-03-04 11:55:53,390 INFO io.undertow.servlet.spec.ServletContextImpl [main] Initializing Spring embedded WebApplicationContext
+2022-03-04 11:55:53,390 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2891 ms
+2022-03-04 11:55:53,650 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2022-03-04 11:55:53,709 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.23.Final-redhat-00001}
+2022-03-04 11:55:53,710 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2022-03-04 11:55:53,857 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.0.5.Final-redhat-00002}
+2022-03-04 11:55:53,944 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-04 11:55:54,051 WARN com.microsoft.sqlserver.jdbc.TDSChannel [main] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:55:54,123 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-04 11:55:54,139 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-03-04 11:55:54,272 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:55:54,320 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:55:54,358 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:55:54,415 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:55:54,452 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:55:54,493 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:55:54,688 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-04 11:55:54,815 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 15)
+2022-03-04 11:55:54,849 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:55:54,894 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-04 11:55:54,910 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:55:54,942 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 11:55:55,020 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-04 11:55:55,363 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-03-04 11:55:55,438 INFO io.undertow.Undertow [main] starting server: Undertow - 2.2.12.Final-redhat-00001
+2022-03-04 11:55:55,443 INFO org.xnio.Xnio [main] XNIO version 3.8.4.Final-redhat-00001
+2022-03-04 11:55:55,448 INFO org.xnio.nio.NioXnio [main] XNIO NIO Implementation Version 3.8.4.Final-redhat-00001
+2022-03-04 11:55:55,506 INFO org.jboss.threads.Version [main] JBoss Threads version 3.1.0.Final
+2022-03-04 11:55:55,539 INFO org.springframework.boot.web.embedded.undertow.UndertowWebServer [main] Undertow started on port(s) 8080 (http)
+2022-03-04 11:55:55,549 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
+2022-03-04 11:55:55,550 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+2022-03-04 11:55:55,559 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) is starting
+2022-03-04 11:55:55,560 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
+2022-03-04 11:55:55,630 INFO org.apache.camel.component.jpa.JpaComponent [main] Using EntityManagerFactory found in registry with id [entityManagerFactory] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean@47f5ab58
+2022-03-04 11:55:55,630 INFO org.apache.camel.component.jpa.JpaComponent [main] Using TransactionManager found in registry with id [transactionManager] org.springframework.orm.jpa.JpaTransactionManager@2c7ac998
+2022-03-04 11:55:55,715 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2022-03-04 11:55:55,724 INFO org.apache.camel.component.jackson.JacksonDataFormat [main] Found single ObjectMapper in Registry to use: com.fasterxml.jackson.databind.ObjectMapper@543196f9
+2022-03-04 11:55:55,823 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route1 started and consuming from: jpa://org.mycompany.entity.FtpAccountEntity?delay=60000&query=select+fa+from+org.mycompany.entity.FtpAccountEntity+fa+where+fa.status+%3D+true
+2022-03-04 11:55:55,826 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route2 started and consuming from: file://%7E/waterBackup/?move=.done&preMove=inprogress
+2022-03-04 11:55:55,827 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route3 started and consuming from: direct://save-data
+2022-03-04 11:55:55,827 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 3 routes, of which 3 are started
+2022-03-04 11:55:55,829 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) started in 0.268 seconds
+2022-03-04 11:55:55,840 INFO org.springframework.boot.StartupInfoLogger [main] Started Application in 5.628 seconds (JVM running for 6.132)
+2022-03-04 11:55:56,877 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [Camel (MyCamel) thread #1 - jpa://org.mycompany.entity.FtpAccountEntity] HHH000397: Using ASTQueryTranslatorFactory
+2022-03-04 12:18:52,907 INFO org.springframework.boot.StartupInfoLogger [main] Starting Application on DESKTOP-2GDIOJC with PID 23052 (C:\Users\USER\git\repository\abc-test\target\classes started by USER in C:\Users\USER\git\repository\abc-test)
+2022-03-04 12:18:52,909 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2022-03-04 12:18:55,439 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-04 12:18:55,456 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 11ms. Found 0 JPA repository interfaces.
+2022-03-04 12:18:55,676 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.apache.camel.spring.boot.CamelAutoConfiguration' of type [org.apache.camel.spring.boot.CamelAutoConfiguration$$EnhancerBySpringCGLIB$$e1fb39a0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-03-04 12:18:55,878 WARN io.undertow.websockets.jsr.Bootstrap [main] UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2022-03-04 12:18:55,895 INFO io.undertow.servlet.spec.ServletContextImpl [main] Initializing Spring embedded WebApplicationContext
+2022-03-04 12:18:55,895 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2950 ms
+2022-03-04 12:18:56,153 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2022-03-04 12:18:56,204 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.3.23.Final-redhat-00001}
+2022-03-04 12:18:56,205 INFO org.hibernate.cfg.Environment [main] HHH000206: hibernate.properties not found
+2022-03-04 12:18:56,319 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.0.5.Final-redhat-00002}
+2022-03-04 12:18:56,395 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2022-03-04 12:18:56,498 WARN com.microsoft.sqlserver.jdbc.TDSChannel [main] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 12:18:56,562 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2022-03-04 12:18:56,575 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2022-03-04 12:18:56,712 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 12:18:56,745 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 12:18:56,783 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 12:18:56,836 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 12:18:56,869 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 12:18:57,074 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-04 12:18:57,209 INFO org.apache.camel.impl.converter.DefaultTypeConverter [main] Type converters loaded (core: 195, classpath: 15)
+2022-03-04 12:18:57,217 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 12:18:57,263 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 12:18:57,296 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-04 12:18:57,306 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 12:18:57,351 WARN com.microsoft.sqlserver.jdbc.TDSChannel [HikariPool-1 connection adder] TLSv1 was negotiated. Please update server and client to use TLSv1.2 at minimum.
+2022-03-04 12:18:57,424 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2022-03-04 12:18:57,777 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [main] Exposing 2 endpoint(s) beneath base path '/actuator'
+2022-03-04 12:18:57,849 INFO io.undertow.Undertow [main] starting server: Undertow - 2.2.12.Final-redhat-00001
+2022-03-04 12:18:57,853 INFO org.xnio.Xnio [main] XNIO version 3.8.4.Final-redhat-00001
+2022-03-04 12:18:57,859 INFO org.xnio.nio.NioXnio [main] XNIO NIO Implementation Version 3.8.4.Final-redhat-00001
+2022-03-04 12:18:57,920 INFO org.jboss.threads.Version [main] JBoss Threads version 3.1.0.Final
+2022-03-04 12:18:57,954 INFO org.springframework.boot.web.embedded.undertow.UndertowWebServer [main] Undertow started on port(s) 8080 (http)
+2022-03-04 12:18:57,967 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML routes from: classpath:camel/*.xml
+2022-03-04 12:18:57,967 INFO org.apache.camel.spring.boot.RoutesCollector [main] Loading additional Camel XML rests from: classpath:camel-rest/*.xml
+2022-03-04 12:18:57,979 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) is starting
+2022-03-04 12:18:57,981 INFO org.apache.camel.management.ManagedManagementStrategy [main] JMX is enabled
+2022-03-04 12:18:58,056 INFO org.apache.camel.component.jpa.JpaComponent [main] Using EntityManagerFactory found in registry with id [entityManagerFactory] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean@61555218
+2022-03-04 12:18:58,056 INFO org.apache.camel.component.jpa.JpaComponent [main] Using TransactionManager found in registry with id [transactionManager] org.springframework.orm.jpa.JpaTransactionManager@2027d56f
+2022-03-04 12:18:58,154 INFO org.apache.camel.impl.DefaultCamelContext [main] StreamCaching is not in use. If using streams then its recommended to enable stream caching. See more details at http://camel.apache.org/stream-caching.html
+2022-03-04 12:18:58,162 INFO org.apache.camel.component.jackson.JacksonDataFormat [main] Found single ObjectMapper in Registry to use: com.fasterxml.jackson.databind.ObjectMapper@755033c5
+2022-03-04 12:18:58,263 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route1 started and consuming from: jpa://org.mycompany.entity.FtpAccountEntity?consumeDelete=false&delay=60000&query=select+fa+from+org.mycompany.entity.FtpAccountEntity+fa+where+fa.status+%3D+true
+2022-03-04 12:18:58,266 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route2 started and consuming from: file://%7E/waterBackup/?move=.done&preMove=inprogress
+2022-03-04 12:18:58,267 INFO org.apache.camel.impl.DefaultCamelContext [main] Route: _route3 started and consuming from: direct://save-data
+2022-03-04 12:18:58,267 INFO org.apache.camel.impl.DefaultCamelContext [main] Total 3 routes, of which 3 are started
+2022-03-04 12:18:58,268 INFO org.apache.camel.impl.DefaultCamelContext [main] Apache Camel 2.23.2.fuse-7_10_0-00020-redhat-00001 (CamelContext: MyCamel) started in 0.288 seconds
+2022-03-04 12:18:58,281 INFO org.springframework.boot.StartupInfoLogger [main] Started Application in 5.622 seconds (JVM running for 6.108)
+2022-03-04 12:18:59,313 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [Camel (MyCamel) thread #1 - jpa://org.mycompany.entity.FtpAccountEntity] HHH000397: Using ASTQueryTranslatorFactory
+2022-03-04 12:18:59,447 INFO org.apache.camel.util.CamelLogger [Camel (MyCamel) thread #3 - Split] protocol ftp

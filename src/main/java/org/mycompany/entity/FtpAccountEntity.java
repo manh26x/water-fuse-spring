@@ -36,6 +36,9 @@ public class FtpAccountEntity implements Serializable{
 	@Column(name="Status")
 	private Boolean status;
 
+	@Column(name="workingdirectory")
+	private String workingDirectory;
+	
 	public FtpAccountEntity() {
 	}
 
@@ -93,6 +96,14 @@ public class FtpAccountEntity implements Serializable{
 
 	public void setStatus(Boolean status) {
 		this.status = status;
+	}
+
+	public String getWorkingDirectory() {
+		return workingDirectory;
+	}
+
+	public void setWorkingDirectory(String workingDirectory) {
+		this.workingDirectory = workingDirectory;
 	}
 	
 	
