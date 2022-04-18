@@ -10,6 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.mycompany.config.DateJsonDeserialize;
+
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 @Entity
 @Table(name = "storagepredata")
 public class StorageDataParam implements Serializable{
@@ -21,11 +27,22 @@ public class StorageDataParam implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	@JsonAlias({ "nguon"})
 	@Column(name="constructioncode")
 	private String constructionName;
 	
+	@JsonAlias({ "mathongso"})
 	@Column(name="parametername")
 	private String parameterName;
+	
+	@JsonAlias({ "maTram"})
+	@Column(name="stationcode")
+	private String stationCode;
+	
+	@JsonAlias({ "trangThaiThietBi"})
+	@Column(name="devicestatus")
+	private String deviceStatus;
+	
 	
 	@Column(name="value")
 	private Float value;
@@ -33,11 +50,18 @@ public class StorageDataParam implements Serializable{
 	@Column(name="unit")
 	private String unit;
 	
+	@JsonAlias({ "thoigian" })
+	@JsonDeserialize(using=DateJsonDeserialize.class)
 	@Column(name="time")
 	private Date time;
 	
 	@Column(name="status")
 	private Boolean status;
+
+	public StorageDataParam() {
+		super();
+		this.status = true;
+	}
 
 	public Long getId() {
 		return id;
@@ -93,6 +117,30 @@ public class StorageDataParam implements Serializable{
 
 	public void setStatus(Boolean status) {
 		this.status = status;
+	}
+	
+	
+
+	public String getStationCode() {
+		return stationCode;
+	}
+
+	public void setStationCode(String stationCode) {
+		this.stationCode = stationCode;
+	}
+
+	public String getDeviceStatus() {
+		return deviceStatus;
+	}
+
+	public void setDeviceStatus(String deviceStatus) {
+		this.deviceStatus = deviceStatus;
+	}
+
+	@Override
+	public String toString() {
+		return "StorageDataParam [id=" + id + ", constructionName=" + constructionName + ", parameterName="
+				+ parameterName + ", value=" + value + ", unit=" + unit + ", time=" + time + ", status=" + status + "]";
 	}
 	
 	

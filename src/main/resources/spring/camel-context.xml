@@ -3,26 +3,58 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       https://camel.apache.org/schema/spring/camel-spring-2.23.3.xsd">
     <bean class="org.mycompany.process.FileProcess" id="fileProcess" scope="singleton"/>
     <bean class="org.mycompany.strategy.ClearOldMessageStrategy" id="clearOldMessage"/>
+    <bean class="org.mycompany.strategy.UsernamePassCheckStrategy" id="usernamePasswordCheck"/>
     <!--<import resource="classpath:spring/jpa-camel-context.xml"/> -->
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+        <dataFormats>
+            <json id="jack" library="Jackson" unmarshalTypeName="org.mycompany.request.DataRequest"/>
+        </dataFormats>
+        <onException useOriginalMessage="true">
+            <exception>org.apache.camel.component.file.GenericFileOperationFailedException</exception>
+            <handled>
+                <constant>true</constant>
+            </handled>
+            <log id="_log_ex" message="Exception ${exception.message}"/>
+        </onException>
         <route id="_route1">
-            <from id="_toSelectFtpAccount" uri="jpa:org.mycompany.entity.FtpAccountEntity?delay=60000&amp;query=select fa from org.mycompany.entity.FtpAccountEntity fa where fa.status = true&amp;consumeDelete=false"/>
+            <from id="_to5" uri="timer://foo?period=60000"/>
+            <enrich id="_enrich1">
+                <constant>jpa:org.mycompany.entity.FtpAccountEntity?query=select fa from org.mycompany.entity.FtpAccountEntity fa where fa.status=true&amp;lockModeType=READ&amp;joinTransaction=false&amp;sharedEntityManager=true&amp;consumeDelete=false&amp;resultClass=java.util.List</constant>
+            </enrich>
             <split id="_split1" parallelProcessing="true">
                 <simple>${body}</simple>
-                <log id="_log3" message="protocol ${body.protocol}"/>
-                <pollEnrich id="_pollEnrich1" strategyRef="clearOldMessage">
-                    <simple>${body.protocol}://${body.account}@${body.ftpAddress}:${body.port}${body.workingDirectory}?password=${body.password}&amp;passiveMode=true&amp;delete=true&amp;disconnect=true</simple>
-                </pollEnrich>
-                <toD id="_to1" uri="file:~/waterBackup/"/>
+                <doTry id="_doTry1">
+                    <log id="_log3" message="protocol ${body.protocol}"/>
+                    <setHeader headerName="account" id="_setHeader3">
+                        <simple>${body.account}</simple>
+                    </setHeader>
+                    <pollEnrich id="_pollEnrich1"
+                        strategyRef="clearOldMessage" timeout="30000">
+                        <simple>${body.protocol}://${body.account}@${body.ftpAddress}:${body.port}${body.workingDirectory}?password=${body.password}&amp;passiveMode=true&amp;delete=true&amp;disconnect=true</simple>
+                    </pollEnrich>
+                    <toD id="_to1" uri="file:waterBackup/${header.account}"/>
+                    <doCatch id="_doCatch1">
+                        <exception>java.lang.Exception</exception>
+                        <handled>
+                            <constant>true</constant>
+                        </handled>
+                        <log id="_log4" message="${exception.message}"/>
+                    </doCatch>
+                </doTry>
             </split>
             <marshal id="_marshal1">
                 <json library="Jackson"/>
             </marshal>
         </route>
         <route id="_route2">
-            <from id="_to2" uri="file:~/waterBackup/?preMove=inprogress&amp;move=.done"/>
+            <from id="_to2" uri="file:waterBackup/?recursive=true&amp;preMove=.improgress&amp;move=.done&amp;minDepth=2&amp;maxDepth=2&amp;moveFailed=.error"/>
             <process id="_process_file" ref="fileProcess"/>
-            <wireTap id="_wireTap1" uri="direct:save-data"/>
+            <choice id="_choice2">
+                <when id="_when2">
+                    <simple>${header.isException != true}</simple>
+                    <wireTap id="_wireTap1" uri="direct:save-data"/>
+                </when>
+            </choice>
             <log id="_log1" message="file ${header.CamelFileName}"/>
         </route>
         <route id="_route3">
@@ -31,6 +63,38 @@
                 <simple>${header.dataSave}</simple>
             </setBody>
             <to id="_to3" uri="jpa:com.mycompany.entity.StorageDataParam?usePersist=true"/>
+            <setBody id="_setBody2">
+                <constant>{"message":"Success"}</constant>
+            </setBody>
+        </route>
+        <route id="_route4">
+            <from id="_from1" uri="netty-http:http://0.0.0.0:8088/sonla-water/add"/>
+            <unmarshal id="convert-json">
+                <custom ref="jack"/>
+            </unmarshal>
+            <setHeader headerName="password" id="_setHeader2">
+                <simple>${body.password}</simple>
+            </setHeader>
+            <enrich id="_enrich2" strategyRef="usernamePasswordCheck">
+                <simple>jpa:org.mycompany.entity.FtpAccountEntity?query=select fa from org.mycompany.entity.FtpAccountEntity fa where fa.status=true and fa.account = '${body.account}'&amp;consumeDelete=false&amp;joinTransaction=false&amp;sharedEntityManager=true&amp;consumeLockEntity=false</simple>
+            </enrich>
+            <choice id="_choice1">
+                <when id="_when1">
+                    <simple>${header.isValid}</simple>
+                    <setHeader headerName="dataSave" id="_setHeader1">
+                        <simple>${body.data}</simple>
+                    </setHeader>
+                    <to id="_to4" uri="direct:save-data"/>
+                </when>
+                <otherwise id="_otherwise1">
+                    <setHeader headerName="CamelHttpResponseCode" id="_set_bad_request">
+                        <constant>400</constant>
+                    </setHeader>
+                    <setBody id="_set_bad_rq_message">
+                        <constant>{"message":"Account password not valid"}</constant>
+                    </setBody>
+                </otherwise>
+            </choice>
         </route>
     </camelContext>
 </beans>

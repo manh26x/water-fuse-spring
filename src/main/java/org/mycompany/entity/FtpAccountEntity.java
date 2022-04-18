@@ -105,6 +105,13 @@ public class FtpAccountEntity implements Serializable{
 	public void setWorkingDirectory(String workingDirectory) {
 		this.workingDirectory = workingDirectory;
 	}
+
+	@Override
+	public String toString() {
+		return "FtpAccountEntity [Id=" + Id + ", ftpAddress=" + ftpAddress + ", account=" + account + ", password="
+				+ password + ", protocol=" + protocol + ", port=" + port + ", status=" + status + ", workingDirectory="
+				+ workingDirectory + "]";
+	}
 	
 	
 	
