@@ -39,6 +39,9 @@ public class FtpAccountEntity implements Serializable{
 	@Column(name="workingdirectory")
 	private String workingDirectory;
 	
+	@Column(name="datatype")
+	private String dataType;
+	
 	public FtpAccountEntity() {
 	}
 
@@ -104,6 +107,23 @@ public class FtpAccountEntity implements Serializable{
 
 	public void setWorkingDirectory(String workingDirectory) {
 		this.workingDirectory = workingDirectory;
+	}
+	
+	
+
+	public String getDataType() {
+		return dataType;
+	}
+
+	public void setDataType(String dataType) {
+		this.dataType = dataType;
+	}
+
+	@Override
+	public String toString() {
+		return "FtpAccountEntity [Id=" + Id + ", ftpAddress=" + ftpAddress + ", account=" + account + ", password="
+				+ password + ", protocol=" + protocol + ", port=" + port + ", status=" + status + ", workingDirectory="
+				+ workingDirectory + "]";
 	}
 	
 	

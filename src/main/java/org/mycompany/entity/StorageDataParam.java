@@ -10,9 +10,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.mycompany.config.DateJsonDeserialize;
+
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 @Entity
 @Table(name = "storagepredata")
-public class StorageDataParam implements Serializable{
+public class StorageDataParam extends Data implements Serializable{
 	
 	/**
 	 * 
@@ -20,31 +26,15 @@ public class StorageDataParam implements Serializable{
 	private static final long serialVersionUID = -6907786117519218775L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	protected Long id;
+
+
+	@JsonAlias({ "nguon"})
 	@Column(name="constructioncode")
 	private String constructionName;
 	
-	@Column(name="parametername")
-	private String parameterName;
-	
-	@Column(name="value")
-	private Float value;
-	
-	@Column(name="unit")
-	private String unit;
-	
-	@Column(name="time")
-	private Date time;
-	
-	@Column(name="status")
-	private Boolean status;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
+	public StorageDataParam() {
+		super();
 	}
 
 	public String getConstructionName() {
@@ -55,46 +45,13 @@ public class StorageDataParam implements Serializable{
 		this.constructionName = constructionName;
 	}
 
-	public String getParameterName() {
-		return parameterName;
-	}
-
-	public void setParameterName(String parameterName) {
-		this.parameterName = parameterName;
-	}
-
-	public Float getValue() {
-		return value;
-	}
-
-	public void setValue(Float value) {
-		this.value = value;
-	}
-
-	public String getUnit() {
-		return unit;
-	}
-
-	public void setUnit(String unit) {
-		this.unit = unit;
-	}
-
-	public Date getTime() {
-		return time;
-	}
-
-	public void setTime(Date time) {
-		this.time = time;
-	}
-
-	public Boolean getStatus() {
-		return status;
-	}
-
-	public void setStatus(Boolean status) {
-		this.status = status;
-	}
 	
-	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 }
