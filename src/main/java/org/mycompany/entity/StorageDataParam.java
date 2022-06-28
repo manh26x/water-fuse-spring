@@ -26,9 +26,7 @@ public class StorageDataParam extends Data implements Serializable{
 	private static final long serialVersionUID = -6907786117519218775L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	protected Long id;
-
-
+	private Long id;
 	@JsonAlias({ "nguon"})
 	@Column(name="constructioncode")
 	private String constructionName;
@@ -53,5 +51,6 @@ public class StorageDataParam extends Data implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
 
 }

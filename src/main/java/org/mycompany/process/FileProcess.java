@@ -177,7 +177,11 @@ public class FileProcess  implements Processor  {
 			       }
 			      
 			}
+<<<<<<< HEAD
 			exchange.getIn().setHeader("isException", isException);
+=======
+			
+>>>>>>> 5e50065efb45288222129548903a363c0cd0bc22
 			exchange.getMessage().setHeader("dataSave", data);
 			if(isException) throw ex;
 			

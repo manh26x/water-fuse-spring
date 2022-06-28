@@ -24,6 +24,7 @@
             <split id="_split1" parallelProcessing="true">
                 <simple>${body}</simple>
                 <doTry id="_doTry1">
+                    <log id="_log3" message="protocol ${body.protocol}"/>
                     <setHeader headerName="account" id="_setHeader3">
                         <simple>${body.account}</simple>
                     </setHeader>
