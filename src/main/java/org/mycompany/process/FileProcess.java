@@ -11,7 +11,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.Iterator;
 
@@ -177,11 +176,7 @@ public class FileProcess  implements Processor  {
 			       }
 			      
 			}
-<<<<<<< HEAD
 			exchange.getIn().setHeader("isException", isException);
-=======
-			
->>>>>>> 5e50065efb45288222129548903a363c0cd0bc22
 			exchange.getMessage().setHeader("dataSave", data);
 			if(isException) throw ex;
 			

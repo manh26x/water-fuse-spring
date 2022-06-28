@@ -109,14 +109,7 @@ public class FtpAccountEntity implements Serializable{
 		this.workingDirectory = workingDirectory;
 	}
 
-	@Override
-	public String toString() {
-		return "FtpAccountEntity [Id=" + Id + ", ftpAddress=" + ftpAddress + ", account=" + account + ", password="
-				+ password + ", protocol=" + protocol + ", port=" + port + ", status=" + status + ", workingDirectory="
-				+ workingDirectory + "]";
-	}
-	
-	
+
 
 	public String getDataType() {
 		return dataType;
