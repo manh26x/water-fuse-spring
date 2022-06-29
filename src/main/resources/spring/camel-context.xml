@@ -18,24 +18,21 @@
         </onException>
         <route id="_route1">
             <from id="_to5" uri="timer://foo?period=60000"/>
-            <enrich id="_enrich1">
+            <enrich id="_enrich_data_ftp">
                 <constant>jpa:org.mycompany.entity.FtpAccountEntity?query=select fa from org.mycompany.entity.FtpAccountEntity fa where fa.status=true&amp;lockModeType=READ&amp;joinTransaction=false&amp;sharedEntityManager=true&amp;consumeDelete=false&amp;resultClass=java.util.List</constant>
             </enrich>
+            <log id="_log_ftp_account" message="ftp account true : ${body}"/>
             <split id="_split1" parallelProcessing="true">
                 <simple>${body}</simple>
                 <doTry id="_doTry1">
-                    <log id="_log3" message="protocol ${body.protocol}"/>
-                    <setHeader headerName="account" id="_setHeader3">
-                        <simple>${body.account}</simple>
-                    </setHeader>
-                    <setHeader headerName="dataType" id="_setHeader4">
-                        <simple>${body.dataType}</simple>
+                    <setHeader headerName="pathbackup" id="_setHeader3">
+                        <simple>${body.dataType}/${body.account}</simple>
                     </setHeader>
                     <pollEnrich id="_pollEnrich1"
                         strategyRef="clearOldMessage" timeout="30000">
                         <simple>${body.protocol}://${body.account}@${body.ftpAddress}:${body.port}${body.workingDirectory}?password=${body.password}&amp;passiveMode=true&amp;delete=true&amp;disconnect=true</simple>
                     </pollEnrich>
-                    <toD id="_to1" uri="file:waterBackup/${header.dataType}/${header.account}"/>
+                    <toD id="_to_folder_backup" uri="file:waterBackup/${header.pathbackup}"/>
                     <doCatch id="_doCatch1">
                         <exception>java.lang.Exception</exception>
                         <handled>
@@ -56,13 +53,21 @@
             <wireTap id="_wireTap1" uri="direct:save-data"/>
             <log id="_log1" message="file ${header.CamelFileName}"/>
         </route>
-        <route id="_route3">
+        <route id="_route_save_data">
             <from id="_from_save_data" uri="direct:save-data"/>
             <setBody id="_setBody1">
                 <simple>${header.dataSave}</simple>
             </setBody>
             <log id="_log2" message="data : ${body}"/>
-            <to id="_to3" uri="jpa:com.mycompany.entity.StorageDataParam?usePersist=true"/>
+            <choice id="_choice2">
+                <when id="_when_storage">
+                    <simple>${header.isStorage}</simple>
+                    <to id="_to_jpa_storage" uri="jpa:com.mycompany.entity.StorageDataParam?usePersist=true"/>
+                </when>
+                <otherwise id="_otherwise_is_station">
+                    <to id="_to_jpa_station" uri="jpa:com.mycompany.entity.StationData?usePersist=true"/>
+                </otherwise>
+            </choice>
             <log id="_log3" message="saved : ${body}"/>
             <setBody id="_setBody2">
                 <constant>{"message":"Success"}</constant>
@@ -96,18 +101,6 @@
                     </setBody>
                 </otherwise>
             </choice>
-        </route>
-        <route id="_route5">
-            <from id="_from_save_data_station" uri="direct:save-data-station"/>
-            <setBody id="_setBody_data_station">
-                <simple>${header.dataSave}</simple>
-            </setBody>
-            <log id="_log_data" message="data : ${body}"/>
-            <to id="_to_data_station" uri="jpa:com.mycompany.entity.StationData?usePersist=true"/>
-            <log id="_log_saved" message="saved : ${body}"/>
-            <setBody id="_setBody_data">
-                <constant>{"message":"Success"}</constant>
-            </setBody>
         </route>
     </camelContext>
 </beans>

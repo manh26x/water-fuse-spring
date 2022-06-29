@@ -20,6 +20,8 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
+import org.mycompany.entity.Data;
+import org.mycompany.entity.StationData;
 import org.mycompany.entity.StorageDataParam;
 
 
@@ -33,13 +35,20 @@ public class FileProcess  implements Processor  {
 	@Override
 	public void process(Exchange exchange) throws Exception {
 		// TODO Auto-generated method stub
-
+			
 			File file = exchange.getMessage().getBody(File.class);
-			for(String path : file.getCanonicalPath().split("\\|/"))
-			System.out.println("file path: " + path);
+			String path[] = file.getParent().split("[\\\\/]",-1);
+			boolean isStorage = false;
+			for(String directoryName : path) {
+				if(directoryName.equals("TNN")) {
+					isStorage = true;
+					exchange.getIn().setHeader("isStorage", isStorage);
+				}
+			}
+			
 			String fileName = file.getName();
 			String fileNameArgs [] = fileName.split("_");
-			ArrayList<StorageDataParam> data = new ArrayList<>();
+			ArrayList<Data> data = new ArrayList<>();
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
 			simpleDateFormat.applyLocalizedPattern("yyyyMMddHHmmss");
 			exchange.getIn().setHeader("constructionName", "");
@@ -51,9 +60,14 @@ public class FileProcess  implements Processor  {
 				
 				try {
 					while (line != null) {
-						StorageDataParam dataParam = new StorageDataParam();
-						dataParam.setConstructionName(fileNameArgs[1]);
-						exchange.getIn().setHeader("constructionName", dataParam.getConstructionName());
+						Data dataParam;
+						if(isStorage) {
+							dataParam = new StorageDataParam();
+							dataParam.setConstructionName(fileNameArgs[1]);
+							exchange.getIn().setHeader("constructionName", dataParam.getConstructionName());
+						} else {
+							dataParam = new StationData();
+						}
 					   
 					    if(fileNameArgs[2].equals("predata")) {
 					    	List<String> lineArgs =  Arrays.asList(line.split("\\s")).stream()

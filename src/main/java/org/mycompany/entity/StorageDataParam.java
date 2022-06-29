@@ -20,13 +20,42 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 @Table(name = "storagepredata")
 public class StorageDataParam extends Data implements Serializable{
 	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
+
+
+
+	@JsonAlias({ "mathongso"})
+	@Column(name="parametername")
+	private String parameterName;
+	
+	@JsonAlias({ "maTram"})
+	@Column(name="stationcode")
+	private String stationCode;
+	
+	@JsonAlias({ "trangThaiThietBi"})
+	@Column(name="devicestatus")
+	private String deviceStatus;
+	
+	
+	@Column(name="value")
+	private Float value;
+	
+	@Column(name="unit")
+	private String unit;
+	
+	@JsonAlias({ "thoigian" })
+	@JsonDeserialize(using=DateJsonDeserialize.class)
+	@Column(name="time")
+	private Date time;
+	
+	@Column(name="status")
+	private Boolean status;
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -6907786117519218775L;
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
 	@JsonAlias({ "nguon"})
 	@Column(name="constructioncode")
 	private String constructionName;
@@ -52,5 +81,63 @@ public class StorageDataParam extends Data implements Serializable{
 		this.id = id;
 	}
 	
+
+	public String getParameterName() {
+		return parameterName;
+	}
+
+	public void setParameterName(String parameterName) {
+		this.parameterName = parameterName;
+	}
+
+	public Float getValue() {
+		return value;
+	}
+
+	public void setValue(Float value) {
+		this.value = value;
+	}
+
+	public String getUnit() {
+		return unit;
+	}
+
+	public void setUnit(String unit) {
+		this.unit = unit;
+	}
+
+	public Date getTime() {
+		return time;
+	}
+
+	public void setTime(Date time) {
+		this.time = time;
+	}
+
+	public Boolean getStatus() {
+		return status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
+	
+	
+
+	public String getStationCode() {
+		return stationCode;
+	}
+
+	public void setStationCode(String stationCode) {
+		this.stationCode = stationCode;
+	}
+
+	public String getDeviceStatus() {
+		return deviceStatus;
+	}
+
+	public void setDeviceStatus(String deviceStatus) {
+		this.deviceStatus = deviceStatus;
+	}
 
 }

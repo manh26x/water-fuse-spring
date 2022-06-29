@@ -12,42 +12,42 @@ import org.mycompany.config.DateJsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-public abstract class Data {
-	
+public class Data {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
+
+
+
 	@JsonAlias({ "mathongso"})
 	@Column(name="parametername")
-	protected String parameterName;
+	private String parameterName;
 	
 	@JsonAlias({ "maTram"})
 	@Column(name="stationcode")
-	protected String stationCode;
+	private String stationCode;
 	
 	@JsonAlias({ "trangThaiThietBi"})
 	@Column(name="devicestatus")
-	protected String deviceStatus;
+	private String deviceStatus;
 	
 	
 	@Column(name="value")
-	protected Float value;
+	private Float value;
 	
 	@Column(name="unit")
-	protected String unit;
+	private String unit;
 	
 	@JsonAlias({ "thoigian" })
 	@JsonDeserialize(using=DateJsonDeserialize.class)
 	@Column(name="time")
-	protected Date time;
+	private Date time;
 	
 	@Column(name="status")
-	protected Boolean status;
-
+	private Boolean status;
 	public Data() {
 		super();
-		this.status = true;
 	}
-
-
-
 
 	public String getParameterName() {
 		return parameterName;
@@ -105,6 +105,19 @@ public abstract class Data {
 
 	public void setDeviceStatus(String deviceStatus) {
 		this.deviceStatus = deviceStatus;
+	}
+
+
+
+
+	public void setConstructionName(String string) {
+	}
+
+
+
+
+	public Object getConstructionName() {
+		return null;
 	}
 
 }

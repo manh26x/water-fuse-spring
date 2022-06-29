@@ -24,7 +24,8 @@ public class ClearOldMessageStrategy implements AggregationStrategy {
 		if (newExchange == null) {
             return oldExchange;
         } 
-		newExchange.getIn().setHeader("account", oldExchange.getIn().getHeader("account"));
+		
+		newExchange.getIn().setHeader("pathbackup", oldExchange.getIn().getHeader("pathbackup"));
         return newExchange;
 	}
 
