@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.mycompany.process;
 
 import java.io.BufferedReader;
@@ -10,9 +7,9 @@ import java.io.FileReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.Iterator;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
@@ -24,13 +21,7 @@ import org.mycompany.entity.Data;
 import org.mycompany.entity.StationData;
 import org.mycompany.entity.StorageDataParam;
 
-
-
-/**
- * @author USER
- *
- */
-public class FileProcess  implements Processor  {
+public class FTPFileProcess   implements Processor  {
 
 	@Override
 	public void process(Exchange exchange) throws Exception {

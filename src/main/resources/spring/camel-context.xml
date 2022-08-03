@@ -16,7 +16,7 @@
             </handled>
             <log id="_log_ex" message="Exception ${exception.message}"/>
         </onException>
-        <route id="_route1">
+        <!--<route id="_route1">
             <from id="_to5" uri="timer://foo?period=60000"/>
             <enrich id="_enrich_data_ftp">
                 <constant>jpa:org.mycompany.entity.FtpAccountEntity?query=select fa from org.mycompany.entity.FtpAccountEntity fa where fa.status=true&amp;lockModeType=READ&amp;joinTransaction=false&amp;sharedEntityManager=true&amp;consumeDelete=false&amp;resultClass=java.util.List</constant>
@@ -29,8 +29,8 @@
                         <simple>${body.dataType}/${body.account}</simple>
                     </setHeader>
                     <pollEnrich id="_pollEnrich1"
-                        strategyRef="clearOldMessage" timeout="30000">
-                        <simple>${body.protocol}://${body.account}@${body.ftpAddress}:${body.port}${body.workingDirectory}?password=${body.password}&amp;passiveMode=true&amp;delete=true&amp;disconnect=true</simple>
+                        strategyRef="clearOldMessage" timeout="10000">
+                        <simple>${body.protocol}://${body.account}@${body.ftpAddress}:${body.port}${body.workingDirectory}?password=${body.password}&amp;passiveMode=true&amp;disconnect=true&amp;move=.done&amp;preMove=.process&amp;moveFailed=.error&amp;repeatCount=-1</simple>
                     </pollEnrich>
                     <toD id="_to_folder_backup" uri="file:waterBackup/${header.pathbackup}"/>
                     <doCatch id="_doCatch1">
@@ -45,7 +45,7 @@
             <marshal id="_marshal1">
                 <json library="Jackson"/>
             </marshal>
-        </route>
+        </route> -->
         <route id="_route2">
             <from id="_to2" uri="file:waterBackup/?recursive=true&amp;preMove=.improgress&amp;move=.done&amp;minDepth=3&amp;maxDepth=3&amp;moveFailed=.error"/>
             <process id="_process_file" ref="fileProcess"/>
@@ -101,6 +101,10 @@
                     </setBody>
                 </otherwise>
             </choice>
+        </route>
+        <route id="_route3">
+            <from id="_from2" uri="ftp:dev@localhost:21/?password=Abc@1234&amp;noop=true&amp;move=.done&amp;recursive=true&amp;passiveMode=true&amp;moveFailed=.error"/>
+            <log id="_log6" message="get file ${header.CamelFileParent}"/>
         </route>
     </camelContext>
 </beans>
