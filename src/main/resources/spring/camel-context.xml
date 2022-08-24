@@ -2,8 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       https://camel.apache.org/schema/spring/camel-spring-2.23.3.xsd">
     <bean class="org.mycompany.process.FileProcess" id="fileProcess" scope="singleton"/>
+    <bean class="org.mycompany.process.FirstFilePathProcess"
+        id="filePathProcess" scope="singleton"/>
     <bean class="org.mycompany.strategy.ClearOldMessageStrategy" id="clearOldMessage"/>
+    <bean class="org.mycompany.process.FTPFileProcess" id="ftpFileProcess"/>
     <bean class="org.mycompany.strategy.UsernamePassCheckStrategy" id="usernamePasswordCheck"/>
+    <bean class="org.mycompany.strategy.EnrichDataTypeStrategy" id="enrichDataTypeStrategy"/>
+    <bean class="org.mycompany.filter.FileFtpFilter" id="filterFileFTP"/>
     <!--<import resource="classpath:spring/jpa-camel-context.xml"/> -->
     <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
         <dataFormats>
@@ -46,13 +51,6 @@
                 <json library="Jackson"/>
             </marshal>
         </route> -->
-        <route id="_route2">
-            <from id="_to2" uri="file:waterBackup/?recursive=true&amp;preMove=.improgress&amp;move=.done&amp;minDepth=3&amp;maxDepth=3&amp;moveFailed=.error"/>
-            <process id="_process_file" ref="fileProcess"/>
-            <log id="_log5" message="finished process file exception? ${header.isException}"/>
-            <wireTap id="_wireTap1" uri="direct:save-data"/>
-            <log id="_log1" message="file ${header.CamelFileName}"/>
-        </route>
         <route id="_route_save_data">
             <from id="_from_save_data" uri="direct:save-data"/>
             <setBody id="_setBody1">
@@ -103,8 +101,14 @@
             </choice>
         </route>
         <route id="_route3">
-            <from id="_from2" uri="ftp:dev@localhost:21/?password=Abc@1234&amp;noop=true&amp;move=.done&amp;recursive=true&amp;passiveMode=true&amp;moveFailed=.error"/>
-            <log id="_log6" message="get file ${header.CamelFileParent}"/>
+            <from id="_from2" uri="ftp:FTP_ADMIN@103.166.182.190:21/?password=Abc@1234&amp;move=${header.CamelFileParent}/.done/.${date:now:yyyy-MM-dd}/${header.CamelFileName}&amp;recursive=true&amp;passiveMode=true&amp;moveFailed=${header.CamelFileParent}/s.error/.${date:now:yyyy-MM-dd}//${header.CamelFileName}&amp;preMove=.processing&amp;minDepth=2&amp;filter=#filterFileFTP"/>
+            <process id="_process_file_path" ref="filePathProcess"/>
+            <enrich id="_enrich_data_ftp" strategyRef="enrichDataTypeStrategy">
+                <simple>jpa:org.mycompany.entity.FtpAccountEntity?query=select fa from org.mycompany.entity.FtpAccountEntity fa where fa.status=true and fa.workingDirectory like '${header.folder}'&amp;lockModeType=READ&amp;joinTransaction=false&amp;sharedEntityManager=true&amp;consumeDelete=false&amp;resultClass=org.mycompany.entity.FtpAccountEntity</simple>
+            </enrich>
+            <process id="_process_ftp_file" ref="ftpFileProcess"/>
+            <log id="_log6" message="get file ${header.CamelFileName} folder ${header.folder} dataType ${header.dataType}"/>
+            <to id="_to_save_data" uri="direct:save-data"/>
         </route>
     </camelContext>
 </beans>

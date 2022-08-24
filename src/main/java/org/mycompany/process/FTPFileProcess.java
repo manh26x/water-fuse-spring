@@ -1,9 +1,11 @@
 package org.mycompany.process;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,16 +29,9 @@ public class FTPFileProcess   implements Processor  {
 	public void process(Exchange exchange) throws Exception {
 		// TODO Auto-generated method stub
 			
-			File file = exchange.getMessage().getBody(File.class);
-			String path[] = file.getParent().split("[\\\\/]",-1);
-			boolean isStorage = false;
-			for(String directoryName : path) {
-				if(directoryName.equals("TNN")) {
-					isStorage = true;
-				}
-			}
-			
-			String fileName = file.getName();
+			byte[] arr =(byte[]) exchange.getMessage().getBody();
+			boolean isStorage = "TNN".equals(exchange.getMessage().getHeader("dataType"));
+			String fileName = exchange.getMessage().getHeader("CamelFileName").toString();
 			String fileNameArgs [] = fileName.split("_");
 			ArrayList<Data> data = new ArrayList<>();
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
@@ -45,7 +40,7 @@ public class FTPFileProcess   implements Processor  {
 			boolean isException = false;
 			Exception ex = null;
 			if(fileName.endsWith(".txt")) {
-				BufferedReader myReader = new BufferedReader(new FileReader(file));
+				BufferedReader myReader = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(arr)));
 				String line = myReader.readLine();
 				
 				try {
@@ -129,7 +124,7 @@ public class FTPFileProcess   implements Processor  {
 				
 			} else if(fileName.endsWith(".xls") || fileName.endsWith(".xlsx")) {
 				 // Đọc một file XSL.
-			       FileInputStream inputStream = new FileInputStream(file);
+					ByteArrayInputStream inputStream = new ByteArrayInputStream(arr);
 			       try {
 			    	   // Đối tượng workbook cho file XSL.
 				       HSSFWorkbook workbook = new HSSFWorkbook(inputStream);
