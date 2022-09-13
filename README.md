@@ -1,98 +1,51 @@
-# Spring Boot Camel XML QuickStart
+# To config FTP 
 
-This example demonstrates how to configure Camel routes in Spring Boot via
-a Spring XML configuration file.
+To change ftp config to sync data, in file `src/resources/spring/camel-context.xml`
 
-The application utilizes the Spring [`@ImportResource`](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/ImportResource.html) annotation to load a Camel Context definition via a _src/main/resources/spring/camel-context.xml_ file on the classpath.
+- in `_route3` id, can change anything bellow
 
-IMPORTANT: This quickstart can run in 2 modes: standalone on your machine and on Kubernetes / OpenShift Cluster
+  - see `...uri="ftp:FTP_ADMIN@103.166.182.190:21/?password=Abc@1234..."` , 
+  - FTP_ADMIN is account name 
+  - 103.166.182.190 is IP
+  - 21 is port
+  - password= ... is password
 
-## Deployment options
+For more detail of Camel Ftp can see [`@FtpCamel`](https://camel.apache.org/components/3.18.x/ftp-component.html) 
 
-You can run this quickstart in the following modes:
+## To change config of database
 
-* Kubernetese / Single-node OpenShift cluster
-* Standalone on your machine
+In file `src/main/resources/application.properties`
 
-The most effective way to run this quickstart is to deploy and run the project on OpenShift.
+```shell
+spring.datasource.url=jdbc:sqlserver://103.166.182.190;database=SonLaEnv
+spring.datasource.username=water
+spring.datasource.password=tnmtsl@123
+```
 
-For more details about running this quickstart on a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the [Spring Boot Runtime Guide](https://appdev.openshift.io/docs/spring-boot-runtime.html).
+Can change config of IP, database and username, password, anything you want
 
-NOTE: Eclipse Fuse Tooling is providing specific menus to run it in a more preconfigured and integrated way.
+## To build project
 
-## Running the Quickstart on a single-node Kubernetes/OpenShift cluster
+- Make sure your computer have `jdk 11` and `maven`
+- Run script
+  
+```shell
+mvn package
+```
 
-IMPORTANT: You need to run this example on Container Development Kit 3.3+ or OpenShift 3.7+.
+- output file ís in `target/camel-ose-springboot-xml-1.0.0-SNAPSHOT.jar`
 
-Both of these products have suitable Fuse images pre-installed.
-If you run it in an environment where those images are not preinstalled follow the steps described in [this section](#single-node-without-preinstalled-images).
+## To install in windows as service using nssm
 
-A single-node Kubernetes/OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+- Make sure you have nssm in your computer, and in your folder will have like this
+- ![img.png](img.png)
+- run `nssm.exe install` in folder win64 or win32 This will open the Service Installer
+![img_1.png](img_1.png)
+- The Path parameter is where the path to you java.exe will go
+- ![img_2.png](img_2.png)
+- The Startup Directory needs to be changed. It should point to the target folder which contain `camel-ose-springboot-xml-1.0.0-SNAPSHOT.jar` file.
+- ![img_3.png](img_3.png)
+- Change Arguments follow: `-jar camel-ose-springboot-xml-1.0.0-SNAPSHOT.jar`
+- ![img_4.png](img_4.png)
+- Add service name and click install service
 
-If you have a single-node Kubernetes/OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, [installed and running](https://appdev.openshift.io/docs/minishift-installation.html), you can deploy your quickstart there.
-
-
-* Log in to your OpenShift cluster:
-
-    $ oc login -u developer -p developer
-
-* Create a new OpenShift project for the quickstart:
-
-    $ oc new-project MY_PROJECT_NAME
-
-* Build and deploy the project to the OpenShift cluster:
-
-    $ mvn clean -DskipTests oc:deploy -Popenshift
-
-* In your browser, navigate to the `MY_PROJECT_NAME` project in the OpenShift console.
-Wait until you can see that the pod for the `spring-boot-camel-xml` has started up.
-
-* On the project's `Overview` page, navigate to the details page deployment of the `spring-boot-camel-xml` application: `https://OPENSHIFT_IP_ADDR:8443/console/project/MY_PROJECT_NAME/browse/rcs/spring-boot-camel-xml-NUMBER_OF_DEPLOYMENT?tab=details`.
-
-* Switch to tab `Logs` and then see the messages sent by Camel.
-
-<a name="single-node-without-preinstalled-images"></a>
-
-### Running the Quickstart on a single-node Kubernetes/OpenShift cluster without preinstalled images through CLI
-
-A single-node Kubernetes/OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
-
-If you have a single-node Kubernetes/OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, [installed and running](http://appdev.openshift.io/docs/minishift-installation.html), you can deploy your quickstart there.
-
-
-* Log in to your OpenShift cluster:
-
-    $ oc login -u developer -p developer
-
-* Create a new OpenShift project for the quickstart:
-
-    $ oc new-project MY_PROJECT_NAME
-
-* Import base images in your newly created project (MY_PROJECT_NAME):
-
-    $ oc import-image fuse-java-openshift:2.0 --from=registry.access.redhat.com/jboss-fuse-7/fuse-java-openshift:2.0 --confirm
-
-* Build and deploy the project to the OpenShift cluster:
-
-    $ mvn clean -DskipTests oc:deploy -Popenshift -Djkube.generator.fromMode=istag -Djkube.generator.from=MY_PROJECT_NAME/fis-java-openshift:2.0
-
-* In your browser, navigate to the `MY_PROJECT_NAME` project in the OpenShift console.
-Wait until you can see that the pod for the `spring-boot-camel-xml` has started up.
-
-* On the project's `Overview` page, navigate to the details page deployment of the `spring-boot-camel-xml` application: `https://OPENSHIFT_IP_ADDR:8443/console/project/MY_PROJECT_NAME/browse/pods/spring-boot-camel-xml-NUMBER_OF_DEPLOYMENT?tab=details`.
-
-* Switch to tab `Logs` and then see the messages sent by Camel.
-
-## Running the quickstart standalone on your machine through CLI
-
-To run this quickstart as a standalone project on your local machine:
-
-* Build the project:
-
-    $ mvn clean package
-    
-* Run the service:
-
-    $ mvn spring-boot:run
-
-* See the messages sent by Camel.
