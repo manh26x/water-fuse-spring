@@ -7,41 +7,41 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "datatransmission")
+@Table(name = "datatransmissionaccounts")
 public class FtpAccountEntity implements Serializable{
-	
+
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1822034336084219122L;
 
 	@javax.persistence.Id
 	private Long Id;
-	
+
 	@Column(name="FTPAddress")
 	private String ftpAddress;
-	
-	@Column(name="Account")
+
+	@Column(name="Username")
 	private String account;
-	
+
 	@Column(name="Password")
 	private String password;
-	
+
 	@Column(name="Protocol")
 	private String protocol;
-	
+
 	@Column(name="Port")
 	private Integer port;
-	
+
 	@Column(name="Status")
 	private Boolean status;
 
 	@Column(name="workingdirectory")
 	private String workingDirectory;
-	
+
 	@Column(name="datatype")
 	private String dataType;
-	
+
 	public FtpAccountEntity() {
 	}
 
@@ -125,7 +125,7 @@ public class FtpAccountEntity implements Serializable{
 				+ password + ", protocol=" + protocol + ", port=" + port + ", status=" + status + ", workingDirectory="
 				+ workingDirectory + "]";
 	}
-	
-	
-	
+
+
+
 }
